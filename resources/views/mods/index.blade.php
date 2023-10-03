@@ -37,10 +37,10 @@
         <div class="container mx-auto">
             <h2 class="text-2xl font-bold">Mod List</h2>
             <ul>
-                @foreach ($Mods as $Mod)
+                @foreach ($mods as $mod)
                     <li>
-                        <a class="text-xl font-bold" href="{{ route('mods.show', ['index' => $Mods->id]) }}">{{ $Mods->title }}</a>
-                        <form method="POST" action="{{ route('mods.destroy', ['song' => $Mods->id]) }}" onsubmit="return confirm('Are you sure you want to delete this mod?')">
+                        <a class="text-xl font-bold" href="{{ route('mods.show', ['index' => $mod->id]) }}">{{ $mod->title }}</a>
+                        <form method="POST" action="{{ route('mods.destroy', ['mod' => $mod->id]) }}" onsubmit="return confirm('Are you sure you want to delete this mod?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded-lg hover:bg-red-600">Delete</button>

@@ -38,21 +38,21 @@
     @section('content')
         <div class="container mx-auto">
             <h2 class="text-2xl font-bold">Edit Mods list</h2>
-            <form method="POST" action="{{ route('mods.update', ['Mods' => $Mod->id]) }}">
+            <form method="POST" action="{{ route('mods.update', ['mod' => $mod->id]) }}">
                 @csrf
                 @method('PUT')
 
                 <div class="mb-4 text-black">
                     <label for="title" class="block text-sm font-medium text-white">Title</label>
-                    <input type="text" id="title" name="title" class="form-input" value="{{ $Mods->title }}">
+                    <input type="text" id="title" name="title" class="form-input" value="{{ $mod->title }}">
                 </div>
                 <div class="mb-4 text-black">
-                    <label for="singer" class="block text-sm font-medium text-white">Singer</label>
-                    <input type="text" id="singer" name="singer" class="form-input" value="{{ $Mods->creator }}">
+                    <label for="creator" class="block text-sm font-medium text-white">Singer</label>
+                    <input type="text" id="creator" name="creator" class="form-input" value="{{ $mod->creator }}">
                 </div>
                 <div class="mb-4 text-black">
-                    <label for="singer" class="block text-sm font-medium text-white">Singer</label>
-                    <input type="text" id="singer" name="singer" class="form-input" value="{{ $Mods->version }}">
+                    <label for="version" class="block text-sm font-medium text-white">Singer</label>
+                    <input type="text" id="version" name="version" class="form-input" value="{{ $mod->version }}">
                 </div>
                 <div class="flex items-center">
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Update</button>
